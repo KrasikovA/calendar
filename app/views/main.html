@@ -1,0 +1,37 @@
+<button
+  class="btn btn-primary"
+  mwl-date-modifier
+  date="main.calendarDate"
+  decrement="main.calendarView">
+  Previous
+</button>
+
+<button
+  class="btn btn-default"
+  mwl-date-modifier
+  date="main.calendarDate"
+  set-to-today>
+  Today
+</button>
+
+<button
+  class="btn btn-primary"
+  mwl-date-modifier
+  date="main.calendarDate"
+  increment="main.calendarView">
+  Next
+</button>
+
+<mwl-calendar
+    view="main.calendarView"
+    view-date="main.calendarDate"
+    events="main.events"
+    view-title="calendarTitle"
+    on-event-click="eventClicked(calendarEvent)"
+    on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+    edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
+    delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
+    on-edit-event-click="eventEdited(calendarEvent)"
+    on-delete-event-click="eventDeleted(calendarEvent)"
+    cell-is-open="true">
+</mwl-calendar>
